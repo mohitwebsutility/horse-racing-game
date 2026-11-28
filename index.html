@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
   <meta name="theme-color" content="#0b1d3a" />
   <title>Arabian Cup · 3D Horse Racing</title>
-  <link rel="stylesheet" href="/src/styles/main.css" />
+  <script type="module" crossorigin src="./assets/index-BOExNK2e.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-2y6mhxgQ.css">
 </head>
 <body>
   <canvas id="game-canvas"></canvas>
@@ -65,6 +66,7 @@
       <h2>Settings</h2>
       <label class="setting"><input type="checkbox" id="set-autorun" checked /> Auto-run (horse runs without holding W)</label>
       <label class="setting"><input type="checkbox" id="set-shadows" checked /> Shadows</label>
+      <label class="setting"><input type="checkbox" id="set-village" checked /> Viking village scenery (turn off on slow devices)</label>
       <label class="setting"><input type="checkbox" id="set-touch" /> Always show touch controls</label>
       <label class="setting">Volume <input type="range" id="set-volume" min="0" max="100" value="60" /></label>
       <label class="setting">Render scale <select id="set-scale"><option value="1">High (native)</option><option value="0.75" selected>Balanced</option><option value="0.5">Low (fast)</option></select></label>
@@ -97,9 +99,10 @@
     <div class="hud-tl">
       <div class="pos"><span id="hud-pos">1</span><sup id="hud-pos-suf">st</sup><span class="of"> / 6</span></div>
       <div class="timer" id="hud-time">0:00.00</div>
+      <div class="lap" id="hud-lap">LAP 1</div>
     </div>
     <div class="hud-tc">
-      <div class="remain"><span id="hud-remain">800</span> m to go</div>
+      <div class="remain"><span id="hud-remain">1200</span> m to go</div>
       <div class="progress" id="hud-progress"></div>
     </div>
     <div class="hud-tr">
@@ -115,6 +118,7 @@
     </div>
     <div id="hud-flash"></div>
     <div id="hud-center"></div>
+    <div id="lap-notice" aria-live="polite"><div id="lap-notice-title"></div><div id="lap-notice-sub"></div></div>
     <div id="hud-toast"></div>
     <div id="touch" hidden>
       <div class="touch-left">
@@ -162,6 +166,5 @@
     </div>
   </div>
 
-  <script type="module" src="/src/main.js"></script>
 </body>
 </html>
